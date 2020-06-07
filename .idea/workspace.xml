@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="538e5849-9464-437b-b819-d1d031fb6636" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/resource/algorithm/二叉树常见题目总结.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/resource/zookeeper/ZooKeeper知识点.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,7 +18,7 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/resource/java/如何避免空指针.md">
+        <entry file="file://$PROJECT_DIR$/src/resource/zookeeper/ZooKeeper知识点.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor />
@@ -38,6 +38,7 @@
         <option value="$PROJECT_DIR$/src/resource/linux常用命令.md" />
         <option value="$PROJECT_DIR$/src/resource/idea/常用快捷键.md" />
         <option value="$PROJECT_DIR$/src/resource/algorithm/二叉树常见题目总结.md" />
+        <option value="$PROJECT_DIR$/src/resource/java/如何避免空指针.md" />
       </list>
     </option>
   </component>
@@ -83,6 +84,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="resource" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Backend-Road" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Backend-Road" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
+              <item name="zookeeper" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -136,12 +144,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1591499030894</updated>
-      <workItem from="1591499032157" duration="1831000" />
+      <workItem from="1591499032157" duration="2258000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1831000" />
+    <option name="totallyTimeSpent" value="2258000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="824" extended-state="0" />
@@ -149,7 +157,7 @@
     <layout>
       <window_info id="Designer" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19742489" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25107297" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="PearlTree检查日志" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
@@ -244,6 +252,24 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/resource/java/如何避免空指针.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="-899">
+            <caret line="153" lean-forward="true" selection-start-line="153" selection-end-line="153" />
+            <folding>
+              <element signature="e#166#167#0" expanded="true" />
+              <element signature="e#189#190#0" expanded="true" />
+              <element signature="e#233#234#0" expanded="true" />
+              <element signature="e#257#258#0" expanded="true" />
+              <element signature="e#105#106#0" expanded="true" />
+              <element signature="e#137#138#0" expanded="true" />
+            </folding>
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resource/zookeeper/ZooKeeper知识点.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor />
