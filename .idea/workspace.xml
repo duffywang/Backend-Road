@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="538e5849-9464-437b-b819-d1d031fb6636" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/src/resource/system/RESTful.md" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/src/resource/system/限流降级.md" afterDir="false" />
+>>>>>>> 6cc08676d183751b8e89e45899f6b6aabdf709b1
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/resource/system/限流降级.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/resource/system/限流降级.md" afterDir="false" />
     </list>
@@ -16,12 +20,20 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+=======
+    <leaf>
+>>>>>>> 6cc08676d183751b8e89e45899f6b6aabdf709b1
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resource/zookeeper/ZooKeeper知识点.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
+<<<<<<< HEAD
               <first_editor relative-caret-position="3978">
+=======
+              <first_editor relative-caret-position="2152">
+>>>>>>> 6cc08676d183751b8e89e45899f6b6aabdf709b1
                 <caret line="234" selection-start-line="234" selection-end-line="234" />
               </first_editor>
               <second_editor />
@@ -29,18 +41,28 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/resource/system/限流降级.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="2380">
                 <caret line="140" column="168" selection-start-line="140" selection-start-column="168" selection-end-line="140" selection-end-column="168" />
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/resource/system/限流降级.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="248">
+                <caret line="120" column="3" selection-start-line="120" selection-start-column="3" selection-end-line="120" selection-end-column="3" />
+>>>>>>> 6cc08676d183751b8e89e45899f6b6aabdf709b1
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
@@ -56,6 +78,14 @@
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="816">
                 <caret line="48" column="25" selection-start-line="48" selection-start-column="25" selection-end-line="48" selection-end-column="25" />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/resource/java/如何避免jar冲突.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="255">
+                <caret line="30" selection-start-line="30" selection-end-line="30" />
+>>>>>>> 6cc08676d183751b8e89e45899f6b6aabdf709b1
               </first_editor>
               <second_editor />
             </state>
@@ -63,11 +93,14 @@
         </entry>
       </file>
     </leaf>
+<<<<<<< HEAD
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>rhino</find>
     </findStrings>
+=======
+>>>>>>> 6cc08676d183751b8e89e45899f6b6aabdf709b1
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -88,7 +121,10 @@
         <option value="$PROJECT_DIR$/src/resource/book/深度工作.md" />
         <option value="$PROJECT_DIR$/src/resource/book/技术人结构化思维.md" />
         <option value="$PROJECT_DIR$/src/resource/java/如何避免jar冲突.md" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/resource/system/RESTful.md" />
+=======
+>>>>>>> 6cc08676d183751b8e89e45899f6b6aabdf709b1
         <option value="$PROJECT_DIR$/src/resource/system/限流降级.md" />
       </list>
     </option>
@@ -106,6 +142,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
+=======
+      <pane id="Scope" />
+>>>>>>> 6cc08676d183751b8e89e45899f6b6aabdf709b1
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -113,12 +153,43 @@
               <item name="Backend-Road" type="b2602c69:ProjectViewProjectNode" />
               <item name="Backend-Road" type="462c0819:PsiDirectoryNode" />
             </path>
+<<<<<<< HEAD
+=======
+            <path>
+              <item name="Backend-Road" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Backend-Road" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Backend-Road" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Backend-Road" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Backend-Road" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Backend-Road" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
+              <item name="system" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Backend-Road" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Backend-Road" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resource" type="462c0819:PsiDirectoryNode" />
+              <item name="zookeeper" type="462c0819:PsiDirectoryNode" />
+            </path>
+>>>>>>> 6cc08676d183751b8e89e45899f6b6aabdf709b1
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+<<<<<<< HEAD
       <pane id="Scope" />
+=======
+>>>>>>> 6cc08676d183751b8e89e45899f6b6aabdf709b1
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -171,18 +242,32 @@
       <workItem from="1591519895810" duration="307000" />
       <workItem from="1591520419620" duration="1403000" />
       <workItem from="1591591416395" duration="468000" />
+<<<<<<< HEAD
       <workItem from="1591625361955" duration="2233000" />
       <workItem from="1591716196331" duration="231000" />
+=======
+      <workItem from="1591625361955" duration="444000" />
+>>>>>>> 6cc08676d183751b8e89e45899f6b6aabdf709b1
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="7043000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="824" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1881259" />
+=======
+    <option name="totallyTimeSpent" value="5023000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="23" width="1440" height="824" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18597998" />
+>>>>>>> 6cc08676d183751b8e89e45899f6b6aabdf709b1
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -371,7 +456,11 @@
     <entry file="file://$PROJECT_DIR$/src/resource/zookeeper/ZooKeeper知识点.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
+<<<<<<< HEAD
           <first_editor relative-caret-position="3978">
+=======
+          <first_editor relative-caret-position="2152">
+>>>>>>> 6cc08676d183751b8e89e45899f6b6aabdf709b1
             <caret line="234" selection-start-line="234" selection-end-line="234" />
           </first_editor>
           <second_editor />
@@ -381,8 +470,13 @@
     <entry file="file://$PROJECT_DIR$/src/resource/system/限流降级.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
+<<<<<<< HEAD
           <first_editor relative-caret-position="2380">
             <caret line="140" column="168" selection-start-line="140" selection-start-column="168" selection-end-line="140" selection-end-column="168" />
+=======
+          <first_editor relative-caret-position="248">
+            <caret line="120" column="3" selection-start-line="120" selection-start-column="3" selection-end-line="120" selection-end-column="3" />
+>>>>>>> 6cc08676d183751b8e89e45899f6b6aabdf709b1
           </first_editor>
           <second_editor />
         </state>
