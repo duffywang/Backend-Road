@@ -57,8 +57,8 @@ ACL(AccessControlLists)策略来进行权限控制，类似UNIX的文件权限�
 
 ZNode分为两种类型：
 
-临时节点（Ephemeral）与会话生命周期绑定，当客户端和服务端断开连接后（会话失效），ZNode节点会自动删除，此类型的目录节点不能有子节点目录，EPHEMERAL_SEQUENTIAL临时有序
-
+临时节点（Ephemeral）与会话生命周期绑定，有两种情况将会删除临时节点，一当创建该znode的客户端的会话因超时或主动关闭而中止时，二当某个客户端（不一定是创建者）主动删除该节点，ZNode节点会自动删除，此类型的目录节点不能有子节点目录，EPHEMERAL_SEQUENTIAL临时有序
+将节点设为临时节点，可用于检测节点崩溃
 持久化节点（Persistent）当客户端和服务端断开连接后，ZNode节点不会自动删除，要想删除只能主动delete，主要目的是为应用保存数据，PERSISTENT_SEQUENTIAL 持久有序
 
 SEQUENTIAL  加上这个后缀节点叫做顺序节点，一旦节点被标记上这个属性，那么这个节点被创建时自动在其后面追加一个整型数字，这个整型数字由父节点维护的自增数字
@@ -219,6 +219,12 @@ ZooKeeper所有读操作getData 、getChildren 、exists 都可以设置监视
 
 控制时序：全局时序，客户端在创建临时有序节点维持一份Sequence，保证子节点创建的时序性，从而也形成了每个客户端的全局时序。
 
+
+### 使用实例
+- HBase：ZK用于选举一个集群内的主节点，以便跟踪可用的服务器，并保存集群的元数据
+- Kafka：ZK用于检测崩溃，实现主题的发现，保持主题的生产和消费
+- Solr：ZK存储集群的元数据，写作更新这些数据
+
 疑问：
 
 1、ZXID如何确定？ 
@@ -240,3 +246,8 @@ zxid 是一个 64 位的数字，它高 32 位是 epoch 用来标识 leader 关�
 Client与Follower通信是通过NIO
 
 系统默认提供了3种选择算法，AuthFastLeaderElection，FastLeaderElection，LeaderElection。其中AuthFastLeaderElection和LeaderElection采用UDP模式进行通信，而FastLeaderElection仍然采用TCP/IP
+
+
+相关名词：
+脑裂：一些从节点无法与主要节点通信，而与第二个主要主节点建立主从系统中两个或多个部分开始独立工作，导致整体行为不一致性
+网络分区：
