@@ -1,5 +1,10 @@
-## ConcurrentHashMap 1.7 vs 1.8
+## HashMap/ConcurrentHashMap 1.7 vs 1.8
 
+
+
+
+
+ConcurrentHashMap
 1 底层数据结构
 1.7：Segment + HashEntry
 1.8：Node + CAS + Synchronized
