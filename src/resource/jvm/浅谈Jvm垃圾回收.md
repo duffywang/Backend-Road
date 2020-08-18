@@ -48,13 +48,13 @@ XX:+ DisableExplicitGC 禁止RMI调用System.gc()
 
 老年代空间出现不足的现象，当执行Full GC后空间仍然不足，则抛出如下错误：java.lang.OutOfMemoryError: Java heap space
 
-调优时应尽量做到让对象在Minor GC阶段被回收、让对象在新生代多存活一段时间及不要创建过大的对象及数组。
+调优时应尽量做到让对象在Minor GC阶段被回收，让对象在新生代多存活一段时间及不要创建过大的对象及数组。
 
 -XX:CMSInitiatingOccupancyFraction=75 老年代占比超过75的时候触发CMS收集
 
-3、永生区空间不足
+3、永久代（元空间）空间不足
 
-JVM规范中运行时数据区域中的方法区，在HotSpot虚拟机中又被习惯称为永生代或者永生区，Permanet Generation（PermGen）中存放的为一些class的信息、常量、静态变量等数据，当系统中要加载的类、反射的类和调用的方法较多时，Permanet Generation可能会被占满，在未配置为采用CMS GC的情况下也会执行Full GC。如果经过Full GC仍然回收不了，那么JVM会抛出如下错误信息：
+JVM规范中运行时数据区域中的方法区，在HotSpot虚拟机中又被习惯称为永久代，Permanet Generation（PermGen）中存放的为一些**class的信息、常量、静态变量等数据**，当系统中要加载的类、反射的类和调用的方法较多时，Permanet Generation可能会被占满，在未配置为采用CMS GC的情况下也会执行Full GC。如果经过Full GC仍然回收不了，那么JVM会抛出如下错误信息：
 
 java.lang.OutOfMemoryError: PermGen space 
 
@@ -64,7 +64,7 @@ java.lang.OutOfMemoryError: PermGen space
 
 ### 触发YoungGC时机
 
-总的来说是Eden区空间不足时，就会触发YoungGC
+**总的来说是Eden区空间不足时，就会触发YoungGC**
 
 另外新生代的四种垃圾回收器均采用复制算法，执行期间都会STW
 
@@ -78,19 +78,23 @@ YGC时对Eden和From Survivor区的存活对象转移到To Survivor空间中，�
 
 具体细节：
 
-1、查找GC Roots，将其引用的对象拷贝到To Survivor区，其中可以作为GC Root的对象有以下几种
+1、查找GC Roots，将其引用的对象拷贝到To Survivor区，其中可以作为GC Root的对象有以下几种，必须是一组必须活跃的引用，否则就可能会漏扫描应该存活的对象，导致GC错误回收这些被漏扫的活对象
 
-虚拟机栈中引用的对象
+Tracing GC的根本思路就是，给定一个集合的引用作为根出发，通过引用关系遍历对象图，能被遍历到的对象被判定为存活
 
-本地方法栈中引用的对象
+Java方法的local变量或参数（本地方法栈），虚拟机栈中引用的对象，我们在程序中正常创建一个对象，对象会在堆上开辟一块空间，同时会将这块空间的地址作为引用保存到虚拟机栈中，如果对象生命周期结束了，那么引用就会从虚拟机栈中出栈，因此如果在虚拟机栈中有引用，就说明这个对象还是有用的，这种情况是最常见的。
 
-方法区中静态属性、常量引用的对象
+JNI方法的local变量或参数，本地方法栈中引用的对象 JNI Local
 
-被Synchronized锁持有的对象
+方法区类中中静态属性(static)、常量引用(static final)的对象  
+
+被Synchronized锁持有的对象 Monitor Used
 
 存在跨代引用的对象
 
 和GC Root处于同一CardTable 的对象 (CardTable为一种用空间换时间的思想，由于跨代引用的对象占比不到1%，如果中有一个对象存在跨代引用，可以用1字节标示该卡页为dirty）
+
+由于方法区、虚拟机栈和本地方法栈中保存了类中和方法中定义的变量的引用，既然是自己定义的变量，所以肯定是有用的。
 
 2、递归遍历第1步的对象，拷贝其引用的对象到To Survivor区
 
@@ -129,4 +133,11 @@ scalpel等Java分析器得到 1）创建了哪些对象 2）创建这些对象�
 5、进程使用了Swap
 
 6、后台I/O活动
+
+### JVM怎么判断对象可以回收
+- 对象没有引用，对象被赋值为空不一定被标记为可回收对象，因为可能会发生逃逸
+- 作用域发生未捕获异常
+- 程序在作用域正常执行完毕
+- 程序执行了System.exit()
+- 程序发生意外终止（被杀进程）
 
