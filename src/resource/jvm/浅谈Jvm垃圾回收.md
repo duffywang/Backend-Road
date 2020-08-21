@@ -47,6 +47,13 @@ XX:+ DisableExplicitGC 禁止RMI调用System.gc()
 2、老年代空间不足
 
 老年代空间出现不足的现象，当执行Full GC后空间仍然不足，则抛出如下错误：java.lang.OutOfMemoryError: Java heap space
+1 大对象直接进入老年代引起，由-XX:PretenureSizeThreshold参数定义
+
+2 Minor GC时，经历过多次Minor GC仍存在的对象进入老年代。上面提过，由-XX:MaxTenuringThreashold参数定义
+
+3 Minor GC时，动态对象年龄判定机制会将对象提前转移老年代。年龄从小到大进行累加，当加入某个年龄段后，累加和超过survivor区域 * -XX:TargetSurvivorRatio的时候，从这个年龄段往上的年龄的对象进入老年代
+
+4 Minor GC时，Eden和From Space区向To Space区复制时，大于To Space区可用内存，会直接把对象转移到老年代
 
 调优时应尽量做到让对象在Minor GC阶段被回收，让对象在新生代多存活一段时间及不要创建过大的对象及数组。
 
@@ -70,7 +77,7 @@ java.lang.OutOfMemoryError: PermGen space
 
 1、正常流程
 
-新对象会先尝试在栈上分配，如果不行则尝试在TLAB分配，否则再看是否满足大对象条件在老年代，最后考虑在Eden区申请空间，如果Eden区没有合适的空间，则触发YGC
+新对象会先尝试在栈上分配，如果不行则尝试在TLAB分配，否则再看是否满足大对象条件在老年代，最后考虑在Eden区申请空间，如果Eden区没有合适的空间，即Eden区域满的时候触发一次YGC
 
 YGC时对Eden和From Survivor区的存活对象转移到To Survivor空间中，过程中如果相同年龄对象数量大于总数量的一半或To Survivor空间不足则直接进入老年代
 
@@ -144,3 +151,16 @@ GC停顿时间取决于堆的大小，如果增大堆的空间，停顿的频率
 - 程序执行了System.exit()
 - 程序发生意外终止（被杀进程）
 
+### Eden区存入一个大对象会发生什么
+如果大于-XX:PretenureSizeThreshold 令大于这个设置值的对象直接在老年代分配，这样做的目的是避免在 Eden 区及两个 Survivor 区之间发生大量的内存复制。
+
+
+### 空间担保
+发生时机：发生在YGC之前，检查老年代最大可用连续空间是否大于新生代所有对象的总空间
+路径
+1、如果大于新生代总空间，此次进行YGC
+2、如果不大于
+2.1关闭HandlePromotionFailure值，则进行Full GC
+2.2开启HandlePromotionFailure值，检查老年代最大用用空间是否大于历次晋升到老年代的对象之和
+2.2.1大于之和，尝试进行一次YGC，此次有风险，失败后会重新发起一次Full GC
+2.2.2小于之和,则直接进行一次Full GC
