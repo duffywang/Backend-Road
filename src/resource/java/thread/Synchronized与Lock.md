@@ -7,6 +7,7 @@
 
 ### AQS
 考察点 ：公平/非公平 加锁 可重入 
+AQS 是JAVA 并发包中核心类，内部维护一个状态和一个线程队列，可用来控制线程什么时候挂起，什么时候唤醒
 - 应用：用于构建锁和同步器的框架，支持ReentrantLock、Semaphore，ReentrantReadWriteLock、CountDownLatch
 - volatile CAS:内部使用一个volatile的变量state作为资源，获取或修改均为CAS操作
 - 同步队列/等待队列：实现排队和阻塞机制，内部使用先进先出双端队列（同步队列），使用head 和tail标示队列的头部和尾部；以及等待队列（单向队列）
