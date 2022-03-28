@@ -37,6 +37,7 @@ Guava cache是一个支持高并发的线程安全的本地缓存，可自动加
        .maximumSize(10000)
        .expireAfterWrite(10, TimeUnit.MINUTES)
        .removalListener(MY_LISTENER)
+       
        .build(
            new CacheLoader<Key, Graph>() {
              public Graph load(Key key) throws AnyException {
